@@ -19,5 +19,8 @@ void setup() {
   p1.display();
   for(int i = 0; i < h.length; i++){
   h[i].display();
+     println(h[i].y);
+  if(mouseX - 25 >= h[i].Hx + 25 && h[i].y <= -300 || mouseX - 25 <= h[i].Hx - 25 && h[i].y <= -300)
+  println("Hit");
   }
   }

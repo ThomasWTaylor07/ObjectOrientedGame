@@ -1,5 +1,5 @@
 class Hazard {
-  float x; 
+  float Hx; 
   float y;
   float newy;
   float wh;
@@ -7,7 +7,7 @@ class Hazard {
 
 
 Hazard() {
- x= random(0,400);
+ Hx= random(0,400);
  y=400;
  wh=20;
  hazard = loadImage("Hazard.png");
@@ -16,12 +16,11 @@ Hazard() {
 
 void display() {
 y+=-1;
-image(hazard,x,newy+y,wh,wh); 
+image(hazard,Hx,newy+y,wh,wh); 
  if(y==-450) {
    y=0;
-   x=random(0,400) + 5;
+   Hx=random(0,400);
    wh=random(30,60);
-   println(y);
   }  
 }
 }

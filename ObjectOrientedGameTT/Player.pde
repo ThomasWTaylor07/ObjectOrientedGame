@@ -1,6 +1,7 @@
 class Player { 
   float y;
   PImage player;
+  boolean hit;
   
   Player() {
     y=20;
@@ -8,5 +9,8 @@ class Player {
   }
   void display() {
    image(player,mouseX-25, 20,50,70);  
+  }
+  void checkCollision() {
+    
   }
 }
