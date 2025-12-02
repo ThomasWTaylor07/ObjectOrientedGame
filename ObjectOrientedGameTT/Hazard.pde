@@ -4,6 +4,7 @@ class Hazard {
   float newy;
   float wh;
   PImage hazard;
+  float score;
 
 
 Hazard() {
@@ -12,6 +13,7 @@ Hazard() {
  wh=20;
  hazard = loadImage("Hazard.png");
  newy=400;
+ score=0;
 }
 
 void display() {
@@ -21,6 +23,7 @@ image(hazard,Hx,newy+y,wh,wh);
    y=0;
    Hx=random(0,400);
    wh=random(30,60);
+   score+=1;
   }  
 }
 }

@@ -1,8 +1,12 @@
 Hazard[] h = new Hazard[10];
 Clouds[] c = new Clouds[2];
 Player p1;
+boolean gameover;
+PImage gameoverscreen;
 void setup() {
   size(400,400);
+  gameover = false;
+  gameoverscreen = loadImage("gameover.png");
   for(int i = 0; i < c.length; i++)
   c[i] = new Clouds(random(1,400)+random(1,100), random(350,450));
   p1 = new Player();
@@ -12,7 +16,12 @@ void setup() {
 
 }
   void draw() {
-    background(49,169,255);
+    if(gameover==true) {
+    displayscreen();   
+    }
+      else { 
+  
+  background(49,169,255);
     for(int i = 0; i < c.length; i++){
   c[i].display();
     }
@@ -20,7 +29,19 @@ void setup() {
   for(int i = 0; i < h.length; i++){
   h[i].display();
      println(h[i].y);
-  if(mouseX - 25 >= h[i].Hx + 25 && h[i].y <= -300 || mouseX - 25 <= h[i].Hx - 25 && h[i].y <= -300)
-  println("Hit");
+ text("Score:" + h[i].score, 290,20);
+  if(mouseX - 25 >= h[i].Hx && h[i].y <= -300 && mouseX - 25 <= h[i].Hx && h[i].y <= -300 && gameover==false);
+  gameover=true;
   }
+  }
+  }
+
+  void mousePressed() {
+    if (gameover==true)
+    gameover=false;
+  }
+  
+  void displayscreen() {
+    println("Hit");
+     image(gameoverscreen,0,0,400,400);  
   }
