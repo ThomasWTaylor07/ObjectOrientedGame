@@ -30,17 +30,20 @@ void setup() {
   h[i].display();
      println(h[i].y);
  text("Score:" + h[i].score, 290,20);
-  if(mouseX - 25 >= h[i].Hx && h[i].y <= -300 && mouseX - 25 <= h[i].Hx && h[i].y <= -300 && gameover==false);
-  gameover=true;
+    if (mouseX - 25 <= h[i].Hx && mouseX - 25 >= h[i].Hx && h[i].y <= -300.0) {
+     gameover=true;   
+  } else {
+   gameover=false;
   }
   }
+      }
   }
 
   void mousePressed() {
     if (gameover==true)
     gameover=false;
   }
-  
+ 
   void displayscreen() {
     println("Hit");
      image(gameoverscreen,0,0,400,400);  
