@@ -1,20 +1,24 @@
 class Clouds {
-  float x;
-  float y;
-  float newy;
+ 
+  PVector location;
+  PVector acceleration;
+  PVector velocity;
 
-Clouds(float testX, float testY) {
-x=testX;
-newy=testY;
+
+Clouds() {
+location = new PVector(random(1,400),401);
+velocity = new PVector(0,-1);
+acceleration = new PVector(0,-0.005);
+
 }
   
   void display() {
-
-  ellipse(x,newy+y,100,50);
-    y+=-1;
- println(y);
- if(y==-500) {
-   y=0;
+location.add(velocity);
+velocity.add(acceleration);
+  ellipse(location.x,location.y,100,50);
+ println(location.y);
+ if(location.y==-1){
+  location.y=401; 
+ }
   }  
-}
 }

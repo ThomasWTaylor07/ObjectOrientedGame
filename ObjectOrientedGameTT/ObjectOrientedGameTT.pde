@@ -1,5 +1,5 @@
 Hazard[] h = new Hazard[10];
-Clouds[] c = new Clouds[2];
+Clouds[] c = new Clouds[5];
 Player p1;
 boolean gameover;
 PImage gameoverscreen;
@@ -7,13 +7,13 @@ void setup() {
   size(400,400);
   gameover = false;
   gameoverscreen = loadImage("gameover.png");
-  for(int i = 0; i < c.length; i++)
-  c[i] = new Clouds(random(1,400)+random(1,100), random(350,450));
+  for(int i = 0; i < c.length; i++){
+  c[i] = new Clouds();
+  }
   p1 = new Player();
-    for(int i = 0; i < h.length; i++)
+    for(int i = 0; i < h.length; i++){
   h[i] = new Hazard();
- 
-
+    }
 }
   void draw() {
     if(gameover==true) {
@@ -28,9 +28,9 @@ void setup() {
   p1.display();
   for(int i = 0; i < h.length; i++){
   h[i].display();
-     println(h[i].y);
+ 
  text("Score:" + h[i].score, 290,20);
-    if (mouseX - 25 <= h[i].Hx && mouseX - 25 >= h[i].Hx && h[i].y <= -300.0) {
+    if (mouseX - 25 >= h[i].Hx - 20 || mouseX - 25 >= h[i].Hx - 20 && h[i].y <= 40) {
      gameover=true;   
   } else {
    gameover=false;
