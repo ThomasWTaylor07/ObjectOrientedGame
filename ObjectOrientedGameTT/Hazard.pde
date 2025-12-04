@@ -30,5 +30,7 @@ image(hazard,Hx,newy+y,wh,wh);
 void update() {
   if (gameover==true)
   y=0;
+   Hx=random(0,400);
+   wh=random(45,60);
 }
   }
