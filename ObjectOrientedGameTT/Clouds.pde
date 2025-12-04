@@ -6,7 +6,7 @@ class Clouds {
 
 
 Clouds() {
-location = new PVector(random(1,400),401);
+location = new PVector(random(1,400),frameCount%width);
 velocity = new PVector(0,-1);
 acceleration = new PVector(0,-0.005);
 
@@ -17,8 +17,5 @@ location.add(velocity);
 velocity.add(acceleration);
   ellipse(location.x,location.y,100,50);
  println(location.y);
- if(location.y==-1){
-  location.y=401; 
  }
   }  
-}

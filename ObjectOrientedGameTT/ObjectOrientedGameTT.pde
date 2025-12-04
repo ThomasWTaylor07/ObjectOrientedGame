@@ -17,7 +17,10 @@ void setup() {
 }
   void draw() {
     if(gameover==true) {
-    displayscreen();   
+    displayscreen();
+      for(int i = 0; i < h.length; i++){
+    h[i].score=0;
+      }
     }
       else { 
   
