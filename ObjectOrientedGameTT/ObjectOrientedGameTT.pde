@@ -22,6 +22,9 @@ void setup() {
     h[i].score=0;
     h[i].update();
       }
+        for(int i = 0; i < c.length; i++){
+          c[i].gameover();
+    }
     }
       else { 
   

@@ -24,5 +24,12 @@ velocity.sub(acceleration);
  location.x=random(1,399);
  }
   }  
+  void gameover() {
+    if(gameover==true){
+    location.y=500;
+    velocity.y=1;
+    }
 }
+}
+  
   
